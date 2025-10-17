@@ -14,6 +14,7 @@
 | ---- | ------------------------------------------------------------ | -------- | ------------------------------------------------------------ | ------ |
 | 1    | [两数之和](#1️⃣-两数之和)                      | 哈希表   | [1. 两数之和 - 力扣（LeetCode）](https://leetcode.cn/problems/two-sum/)        | 🟢 Easy |
 | 2    | [最长公共前缀](#2️⃣-最长公共前缀) | 动态规划 | [14. 最长公共前缀 - 力扣（LeetCode）](https://leetcode.cn/problems/longest-common-prefix/) | 🟢 Easy |
+| 3    | [三数之和](#3️⃣-三数之和) | 动态规划 | [LCR 007. 三数之和 - 力扣（LeetCode）](https://leetcode.cn/problems/1fGaJU/) | 🟢 Easy |
 
 ## 
 ## 🔗 链表 (LinkedList)
@@ -97,7 +98,36 @@ func longestCommonPrefix(strs []string) string {
     return string(u)
 }
 ```
+---
+### 3️⃣ 三数之和
+<img width="600" height="500" alt="image" src="https://github.com/user-attachments/assets/da8c856c-35e9-4a40-8d44-cc048f1ff00b" />
 
+```go
+func threeSum(nums []int) [][]int {
+    sort.Ints(nums)
+    var res [][]int
+    n := len(nums)
+    for i := 0; i < n-2; i++ {
+        // 避免生成相同的target，去重
+        if i > 0 && nums[i] == nums[i-1] {
+            continue
+        }
+        target := -nums[i]
+        tmp := make(map[int]bool)
+        for j := i + 1; j < n; j++ {
+            a := target - nums[j]
+            if tmp[a] {     // a与map中的值可以相同
+                res = append(res, []int{nums[i], a, nums[j]})
+                for j+1 < n && nums[j] == nums[j+1] {
+                    j++
+                }
+            }
+            tmp[nums[j]] = true
+        }
+    }
+    return res
+}
+```
 ---
 
 ### 1️⃣ 反转链表 <a id="反转链表"></a>
