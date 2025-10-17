@@ -30,3 +30,69 @@ func twoSum(nums []int, target int) []int {
 ```
 
 ---
+## 
+## 📘 链表 (LinkedList)
+| #    | 题目                                                         | 类型     | LeetCode                                                     | 难度   |
+| ---- | ------------------------------------------------------------ | -------- | ------------------------------------------------------------ | ------ |
+| 1    | [反转链表](#反转链表)                      | 链表   | [206. 反转链表 - 力扣（LeetCode）](https://leetcode.cn/problems/reverse-linked-list/description/?envType=problem-list-v2&envId=linked-list)        | 🟢 Easy |
+| 2    | [两两交换链表中的节点](#两两交换链表中的节点)                      | 链表   | [24. 两两交换链表中的节点 - 力扣（LeetCode）](https://leetcode.cn/problems/swap-nodes-in-pairs/description/?envType=problem-list-v2&envId=linked-list)        | 🟢 Easy |
+
+### 🧩 反转链表
+
+```go
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func reverseList(head *ListNode) *ListNode {
+    prev := (*ListNode)(nil)
+    cur := head
+    for cur != nil {
+        head = head.Next
+        cur.Next = prev
+        prev = cur
+        cur = head
+    }
+    return prev
+}
+```
+
+---
+
+### 🧩 两两交换链表中的节点
+
+```go
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func swapPairs(head *ListNode) *ListNode {
+    if head == nil || head.Next == nil {
+        return head
+    }
+    prevHead := &ListNode{0, head}
+    cur, swapNode := head, head.Next
+    rt := swapNode
+    for {
+        prevHead.Next = swapNode
+        cur.Next = swapNode.Next
+        swapNode.Next = cur
+        prevHead = cur
+        if cur.Next != nil && cur.Next.Next != nil {
+            cur = cur.Next
+            swapNode = cur.Next
+        }else {
+            break
+        }
+    }
+    return rt
+}
+```
+
+---
