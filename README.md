@@ -3,6 +3,7 @@
 
 本项目用于整理和记录我的 LeetCode 刷题代码与思路，按照**数据结构**与**算法类型**分类展示。  
 点击表格中的题目可以直接跳转到该题的详细代码实现。
+
 1️⃣ 2️⃣ 3️⃣ 4️⃣ 5️⃣ 6️⃣ 7️⃣ 8️⃣ 9️⃣ 🔟
 ---
 
@@ -12,49 +13,49 @@
 | #    | 题目                                                         | 类型     | LeetCode                                                     | 难度   |
 | ---- | ------------------------------------------------------------ | -------- | ------------------------------------------------------------ | ------ |
 | 1    | [两数之和](#1️⃣-两数之和)                      | 哈希表   | [1. 两数之和 - 力扣（LeetCode）](https://leetcode.cn/problems/two-sum/)        | 🟢 Easy |
-| 2    | [最长公共前缀](#最长公共前缀) | 动态规划 | [14. 最长公共前缀 - 力扣（LeetCode）](https://leetcode.cn/problems/longest-common-prefix/) | 🟢 Easy |
+| 2    | [最长公共前缀](#2️⃣-最长公共前缀) | 动态规划 | [14. 最长公共前缀 - 力扣（LeetCode）](https://leetcode.cn/problems/longest-common-prefix/) | 🟢 Easy |
 
 ## 
 ## 🔗 链表 (LinkedList)
 | #    | 题目                                                         | 类型     | LeetCode                                                     | 难度   |
 | ---- | ------------------------------------------------------------ | -------- | ------------------------------------------------------------ | ------ |
-| 1    | [反转链表](#反转链表)                      | 链表   | [206. 反转链表 - 力扣（LeetCode）](https://leetcode.cn/problems/reverse-linked-list/description/?envType=problem-list-v2&envId=linked-list)        | 🟢 Easy |
-| 2    | [两两交换链表中的节点](#两两交换链表中的节点)                      | 链表   | [24. 两两交换链表中的节点 - 力扣（LeetCode）](https://leetcode.cn/problems/swap-nodes-in-pairs/description/?envType=problem-list-v2&envId=linked-list)        | 🟢 Easy |
-| 3    | [环形链表](#环形链表)                      | 链表   | [141. 环形链表 - 力扣（LeetCode）](https://leetcode.cn/problems/linked-list-cycle/description/?envType=problem-list-v2&envId=linked-list)        | 🟢 Easy |
-| 4    | [环形链表-找入环点](#环形链表-找入环点)                      | 链表   | [142. 环形链表 II - 力扣（LeetCode）](https://leetcode.cn/problems/linked-list-cycle-ii/solutions/441131/huan-xing-lian-biao-ii-by-leetcode-solution/?envType=problem-list-v2&envId=linked-list)- 找入环点        | 🟢 Easy |
-| 5    | [K个一组翻转链表](#K个一组翻转链表)                      | 链表   | [25. K 个一组翻转链表 - 力扣（LeetCode）](https://leetcode.cn/problems/reverse-nodes-in-k-group/?envType=problem-list-v2&envId=linked-list)        | 🟢 Easy |
+| 1    | [反转链表](#1️⃣-反转链表)                      | 链表   | [206. 反转链表 - 力扣（LeetCode）](https://leetcode.cn/problems/reverse-linked-list/description/?envType=problem-list-v2&envId=linked-list)        | 🟢 Easy |
+| 2    | [两两交换链表中的节点](#2️⃣-两两交换链表中的节点)                      | 链表   | [24. 两两交换链表中的节点 - 力扣（LeetCode）](https://leetcode.cn/problems/swap-nodes-in-pairs/description/?envType=problem-list-v2&envId=linked-list)        | 🟢 Easy |
+| 3    | [环形链表](#3️⃣-环形链表)                      | 链表   | [141. 环形链表 - 力扣（LeetCode）](https://leetcode.cn/problems/linked-list-cycle/description/?envType=problem-list-v2&envId=linked-list)        | 🟢 Easy |
+| 4    | [环形链表-找入环点](#4️⃣-环形链表-找入环点)                      | 链表   | [142. 环形链表 II - 力扣（LeetCode）](https://leetcode.cn/problems/linked-list-cycle-ii/solutions/441131/huan-xing-lian-biao-ii-by-leetcode-solution/?envType=problem-list-v2&envId=linked-list)- 找入环点        | 🟢 Easy |
+| 5    | [K个一组翻转链表](#5️⃣-K个一组翻转链表)                      | 链表   | [25. K 个一组翻转链表 - 力扣（LeetCode）](https://leetcode.cn/problems/reverse-nodes-in-k-group/?envType=problem-list-v2&envId=linked-list)        | 🟢 Easy |
 
 ## 
 ## 🧱 栈和队列 (Stack & Queue)
 
 | #    | 题目                                                         | 类型     | LeetCode                                                     | 难度   |
 | ---- | ------------------------------------------------------------ | -------- | ------------------------------------------------------------ | ------ |
-| 1    | [有效的括号](#有效的括号)                      | 栈   | [20. 有效的括号 - 力扣（LeetCode）](https://leetcode.cn/problems/valid-parentheses/description/?envType=problem-list-v2&envId=stack)         | 🟢 Easy |
-| 2    | [用栈实现队列](#用栈实现队列) | 栈 | [232. 用栈实现队列 - 力扣（LeetCode）](https://leetcode.cn/problems/implement-queue-using-stacks/?envType=problem-list-v2&envId=stack) | 🟢 Easy |
-| 3    | [用队列实现栈](#用队列实现栈) | 栈 | [225. 用队列实现栈 - 力扣（LeetCode）](https://leetcode.cn/problems/implement-stack-using-queues/description/?envType=problem-list-v2&envId=stack) | 🟢 Easy |
+| 1    | [有效的括号](#1️⃣-有效的括号)                      | 栈   | [20. 有效的括号 - 力扣（LeetCode）](https://leetcode.cn/problems/valid-parentheses/description/?envType=problem-list-v2&envId=stack)         | 🟢 Easy |
+| 2    | [用栈实现队列](#2️⃣-用栈实现队列) | 栈 | [232. 用栈实现队列 - 力扣（LeetCode）](https://leetcode.cn/problems/implement-queue-using-stacks/?envType=problem-list-v2&envId=stack) | 🟢 Easy |
+| 3    | [用队列实现栈](#3️⃣-用队列实现栈) | 栈 | [225. 用队列实现栈 - 力扣（LeetCode）](https://leetcode.cn/problems/implement-stack-using-queues/description/?envType=problem-list-v2&envId=stack) | 🟢 Easy |
 
 ## 
 ## 🧮 优先队列 (Priority Queue)
 
 | #    | 题目                                                         | 类型     | LeetCode                                                     | 难度   |
 | ---- | ------------------------------------------------------------ | -------- | ------------------------------------------------------------ | ------ |
-| 1    | [数据流中的第K大元素](#数据流中的第K大元素)                      | 堆   | [703. 数据流中的第 K 大元素 - 力扣（LeetCode）](https://leetcode.cn/problems/kth-largest-element-in-a-stream/description/)        | 🟢 Easy |
-| 2    | [滑动窗口最大值](#滑动窗口最大值)                      | 队列   | [239. 滑动窗口最大值 - 力扣（LeetCode）](https://leetcode.cn/problems/sliding-window-maximum/description/)        | 🟢 Easy |
-| 3    | [早餐组合](#早餐组合)                      | 队列   | [LCP 18. 早餐组合 - 力扣（LeetCode）](https://leetcode.cn/problems/2vYnGI/description/)        | 🟢 Easy |
+| 1    | [数据流中的第K大元素](#1️⃣-数据流中的第K大元素)                      | 堆   | [703. 数据流中的第 K 大元素 - 力扣（LeetCode）](https://leetcode.cn/problems/kth-largest-element-in-a-stream/description/)        | 🟢 Easy |
+| 2    | [滑动窗口最大值](#2️⃣-滑动窗口最大值)                      | 队列   | [239. 滑动窗口最大值 - 力扣（LeetCode）](https://leetcode.cn/problems/sliding-window-maximum/description/)        | 🟢 Easy |
+| 3    | [早餐组合](#3️⃣-早餐组合)                      | 队列   | [LCP 18. 早餐组合 - 力扣（LeetCode）](https://leetcode.cn/problems/2vYnGI/description/)        | 🟢 Easy |
 
 ## 
 ## 🌳 二叉树 (Binary Tree)
 
 | #    | 题目                                                         | 类型     | LeetCode                                                     | 难度   |
 | ---- | ------------------------------------------------------------ | -------- | ------------------------------------------------------------ | ------ |
-| 1    | [相同的树](#相同的树)                      | 二叉树   | [100. 相同的树 - 力扣（LeetCode）](https://leetcode.cn/problems/same-tree/)       | 🟢 Easy |
+| 1    | [相同的树](#1️⃣-相同的树)                      | 二叉树   | [100. 相同的树 - 力扣（LeetCode）](https://leetcode.cn/problems/same-tree/)       | 🟢 Easy |
 
 ## 
 ## 🔢 哈希表与集合 (Map & Set)
 
 | #    | 题目                                                         | 类型     | LeetCode                                                     | 难度   |
 | ---- | ------------------------------------------------------------ | -------- | ------------------------------------------------------------ | ------ |
-| 1    | [有效的字母异位词](#有效的字母异位词)                      | 二叉树   | [242. 有效的字母异位词 - 力扣（LeetCode）](https://leetcode.cn/problems/valid-anagram/description/)      | 🟢 Easy |
+| 1    | [有效的字母异位词](#1️⃣-有效的字母异位词)                      | 二叉树   | [242. 有效的字母异位词 - 力扣（LeetCode）](https://leetcode.cn/problems/valid-anagram/description/)      | 🟢 Easy |
 
 ---
 ### 1️⃣ 两数之和
@@ -74,7 +75,7 @@ func twoSum(nums []int, target int) []int {
 ```
 
 ---
-### 最长公共前缀
+### 2️⃣ 最长公共前缀
 
 ```go
 func longestCommonPrefix(strs []string) string {
@@ -99,7 +100,7 @@ func longestCommonPrefix(strs []string) string {
 
 ---
 
-### 反转链表 <a id="反转链表"></a>
+### 1️⃣ 反转链表 <a id="反转链表"></a>
 
 ```go
 /**
@@ -124,7 +125,7 @@ func reverseList(head *ListNode) *ListNode {
 
 ---
 
-### 两两交换链表中的节点<a id="两两交换链表中的节点"></a>
+### 2️⃣ 两两交换链表中的节点<a id="两两交换链表中的节点"></a>
 
 ```go
 /**
@@ -158,7 +159,7 @@ func swapPairs(head *ListNode) *ListNode {
 ```
 
 ---
-### 环形链表<a id="环形链表"></a>
+### 3️⃣ 环形链表<a id="环形链表"></a>
 
 ```go
 /**
@@ -194,7 +195,7 @@ func hasCycle(head *ListNode) bool {
 ```
 
 ---
-### 环形链表-找入环点<a id="环形链表-找入环点"></a>
+### 4️⃣ 环形链表-找入环点<a id="环形链表-找入环点"></a>
 
 ```go
 /**
@@ -233,7 +234,7 @@ func detectCycle(head *ListNode) *ListNode {
 ```
 
 ---
-### K个一组翻转链表<a id="K个一组翻转链表"></a>
+### 5️⃣ K个一组翻转链表<a id="K个一组翻转链表"></a>
 
 ```go
 /**
@@ -278,7 +279,7 @@ func reverseKGroup(head *ListNode, k int) *ListNode {
 
 ---
 
-### 有效的括号
+### 1️⃣ 有效的括号
 
 ```go
 func isValid(s string) bool {
@@ -306,7 +307,7 @@ func isValid(s string) bool {
 ```
 
 ---
-### 用栈实现队列
+### 2️⃣ 用栈实现队列
 
 ```go
 type MyQueue struct {
@@ -373,7 +374,7 @@ func (this *MyQueue) Empty() bool {
 ```
 
 ---
-### 用队列实现栈
+### 3️⃣ 用队列实现栈
 
 ```go
 type MyStack struct {
@@ -457,7 +458,7 @@ func (this *MyStack) Empty() bool {
 
 ---
 
-### 数据流中的第K大元素
+### 1️⃣ 数据流中的第K大元素
 
 ```go
 type KthLargest struct {
@@ -495,7 +496,7 @@ func (this *KthLargest) Add(val int) int {
 ```
 
 ---
-### 滑动窗口最大值
+### 2️⃣ 滑动窗口最大值
 
 ```go
 func maxSlidingWindow(nums []int, k int) []int {
@@ -532,7 +533,7 @@ func maxSlidingWindow(nums []int, k int) []int {
 ```
 
 ---
-### 早餐组合
+### 3️⃣ 早餐组合
 
 ```go
 func breakfastNumber(staple []int, drinks []int, x int) int {
@@ -559,7 +560,7 @@ func breakfastNumber(staple []int, drinks []int, x int) int {
 
 ---
 
-### 相同的树
+### 1️⃣ 相同的树
 
 ```go
 /**
@@ -582,7 +583,7 @@ func isSameTree(p *TreeNode, q *TreeNode) bool {
 
 ---
 
-### 有效的字母异位词
+### 1️⃣ 有效的字母异位词
 
 ```go
 func isAnagram(s string, t string) bool {
