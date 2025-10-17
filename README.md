@@ -11,7 +11,7 @@
 
 | #    | 题目                                                         | 类型     | LeetCode                                                     | 难度   |
 | ---- | ------------------------------------------------------------ | -------- | ------------------------------------------------------------ | ------ |
-| 1    | [两数之和](#两数之和)                      | 哈希表   | [1. 两数之和 - 力扣（LeetCode）](https://leetcode.cn/problems/two-sum/)        | 🟢 Easy |
+| 1    | [两数之和](#1️⃣-两数之和)                      | 哈希表   | [1. 两数之和 - 力扣（LeetCode）](https://leetcode.cn/problems/two-sum/)        | 🟢 Easy |
 | 2    | [最长公共前缀](#最长公共前缀) | 动态规划 | [14. 最长公共前缀 - 力扣（LeetCode）](https://leetcode.cn/problems/longest-common-prefix/) | 🟢 Easy |
 
 ## 
