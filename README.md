@@ -34,6 +34,7 @@
 | 1    | [有效的括号](#1️⃣-有效的括号)                      | 栈   | [20. 有效的括号 - 力扣（LeetCode）](https://leetcode.cn/problems/valid-parentheses/description/?envType=problem-list-v2&envId=stack)         | 🟢 Easy |
 | 2    | [用栈实现队列](#2️⃣-用栈实现队列) | 栈 | [232. 用栈实现队列 - 力扣（LeetCode）](https://leetcode.cn/problems/implement-queue-using-stacks/?envType=problem-list-v2&envId=stack) | 🟢 Easy |
 | 3    | [用队列实现栈](#3️⃣-用队列实现栈) | 栈 | [225. 用队列实现栈 - 力扣（LeetCode）](https://leetcode.cn/problems/implement-stack-using-queues/description/?envType=problem-list-v2&envId=stack) | 🟢 Easy |
+| 4    | [股票价格跨度](#4️⃣-股票价格跨度) | 单调栈 | [901. 股票价格跨度 - 力扣（LeetCode）](https://leetcode.cn/problems/online-stock-span/) | 🟢 Easy |
 
 ## 
 ## 🧮 优先队列 (Priority Queue)
@@ -724,14 +725,55 @@ func isAnagram(s string, t string) bool {
 func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
     // 递归终止条件
     if root == nil {return nil}
+	// 如果都在右子树
 	if p.Val > root.Val && q.Val > root.Val {
         return lowestCommonAncestor(root.Right, p, q)
     }
+	// 如果都在左子树
     if p.Val < root.Val && q.Val < root.Val {
         return lowestCommonAncestor(root.Left, p, q)
     }
     return root
 }
+```
+
+---
+
+### 4️⃣-股票价格跨度
+<img width="500" height="700" alt="image" src="https://github.com/user-attachments/assets/419bc97a-3d6a-4d2b-8e09-4bbaa276144a" />
+
+
+```go
+type StockSpanner struct {
+    stack []pair     // 单调栈，栈底价格至栈顶依此增大
+}
+type pair struct {
+    price int
+    span int
+}
+
+func Constructor() StockSpanner {
+    return StockSpanner{}
+}
+
+func (this *StockSpanner) Next(price int) int {
+    span := 1
+    for len(this.stack) > 0 && this.stack[len(this.stack)-1].price <= price {
+        // 如果当前栈顶price小于当前price，则当前span = 栈顶span + 1
+        // 然后还需要继续向栈底判断，如果还有小于当前price的pair则需要再次加上相应的span
+        span += this.stack[len(this.stack)-1].span
+        // 不断删除栈顶小于当前价格的pair
+        this.stack = this.stack[:len(this.stack)-1]
+    }
+    // 目前栈顶span价格大于当前price，则构造pair并加入栈顶
+    this.stack = append(this.stack, pair{price: price, span: span})
+    return span
+}
+/**
+ * Your StockSpanner object will be instantiated and called as such:
+ * obj := Constructor();
+ * param_1 := obj.Next(price);
+ */
 ```
 
 ---
