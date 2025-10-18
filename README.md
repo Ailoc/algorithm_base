@@ -50,6 +50,7 @@
 | #    | 题目                                                         | 类型     | LeetCode                                                     | 难度   |
 | ---- | ------------------------------------------------------------ | -------- | ------------------------------------------------------------ | ------ |
 | 1    | [相同的树](#1️⃣-相同的树)                      | 二叉树   | [100. 相同的树 - 力扣（LeetCode）](https://leetcode.cn/problems/same-tree/)       | 🟢 Easy |
+| 2    | [验证二叉搜索树](#2️⃣-验证二叉搜索树)                      | 二叉树   | [98. 验证二叉搜索树 - 力扣（LeetCode）](https://leetcode.cn/problems/validate-binary-search-tree/submissions/671510624/)       | 🟢 Easy |
 
 ## 
 ## 🔢 哈希表与集合 (Map & Set)
@@ -613,6 +614,46 @@ func isSameTree(p *TreeNode, q *TreeNode) bool {
 
 ---
 
+### 2️⃣ 验证二叉搜索树
+<img width="500" height="600" alt="image" src="https://github.com/user-attachments/assets/c9f1427a-f3b1-4b0f-bdcb-437e3f4e028e" />
+
+```go
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func isValidBST(root *TreeNode) bool {
+    prev := new(int)  // 分配内存
+    *prev = math.MinInt64  // 初始化为负无穷哨兵
+    return inorder(root, prev)
+}
+
+func inorder(node *TreeNode, prev *int) bool {
+    if node == nil {
+        return true
+    }
+    // 先递归左子树
+    if !inorder(node.Left, prev) {
+        return false
+    }
+    // 访问当前节点：检查递增性
+    if node.Val <= *prev {
+        return false
+    }
+    *prev = node.Val  // 更新前驱
+    // 后递归右子树
+    if !inorder(node.Right, prev) {
+        return false
+    }
+    return true
+}
+```
+
+---
 ### 1️⃣ 有效的字母异位词
 
 ```go
