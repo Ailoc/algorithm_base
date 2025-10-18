@@ -51,7 +51,7 @@
 | ---- | ------------------------------------------------------------ | -------- | ------------------------------------------------------------ | ------ |
 | 1    | [相同的树](#1️⃣-相同的树)                      | 二叉树   | [100. 相同的树 - 力扣（LeetCode）](https://leetcode.cn/problems/same-tree/)       | 🟢 Easy |
 | 2    | [验证二叉搜索树](#2️⃣-验证二叉搜索树)                      | 二叉树   | [98. 验证二叉搜索树 - 力扣（LeetCode）](https://leetcode.cn/problems/validate-binary-search-tree/submissions/671510624/)       | 🟢 Easy |
-
+| 3    | [二叉树的最近公共祖先](#3️⃣-二叉树的最近公共祖先)                      | 二叉树   | [236. 二叉树的最近公共祖先 - 力扣（LeetCode）](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/description/)       | 🟢 Easy |
 ## 
 ## 🔢 哈希表与集合 (Map & Set)
 
@@ -654,6 +654,33 @@ func inorder(node *TreeNode, prev *int) bool {
 ```
 
 ---
+### 3️⃣ 二叉树的最近公共祖先
+<img width="500" height="600" alt="image" src="https://github.com/user-attachments/assets/a4e746dd-719c-48f1-9fb9-34221a9e26fc" />
+
+```go
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
+  if root == nil || root == p || root == q {return root}
+  left := lowestCommonAncestor(root.Left, p, q)
+  right := lowestCommonAncestor(root.Right, p, q)
+  if left != nil && right != nil{
+    return root
+  }
+  if right == nil{
+    return left
+  }
+  return right
+}
+```
+
+---
 ### 1️⃣ 有效的字母异位词
 
 ```go
@@ -680,3 +707,4 @@ func isAnagram(s string, t string) bool {
 ```
 
 ---
+
