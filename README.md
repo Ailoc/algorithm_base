@@ -55,6 +55,8 @@
 | 3    | [二叉树的最近公共祖先](#3️⃣-二叉树的最近公共祖先)                      | 二叉树   | [236. 二叉树的最近公共祖先 - 力扣（LeetCode）](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/description/)       | 🟢 Easy |
 | 4    | [二叉树的最近公共祖先](#4️⃣-二叉搜索树的最近公共祖先)                      | 二叉树   | [235. 二叉搜索树的最近公共祖先 - 力扣（LeetCode）](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/)       | 🟢 Easy |
 | 5    | [二叉树的中序遍历](#5️⃣-二叉树的中序遍历)                      | 二叉树，递归   | [94. 二叉树的中序遍历 - 力扣（LeetCode）](https://leetcode.cn/problems/binary-tree-inorder-traversal/?envType=problem-list-v2&envId=tree)       | 🟢 Easy |
+| 6    | [对称二叉树](#6️⃣-对称二叉树)                      | 二叉树，递归   | [101. 对称二叉树 - 力扣（LeetCode）](https://leetcode.cn/problems/symmetric-tree/?envType=problem-list-v2&envId=tree)       | 🟢 Easy |
+
 ## 
 ## 🔢 哈希表与集合 (Map & Set)
 
@@ -803,6 +805,41 @@ func Inorder(root *TreeNode, arr *[]int) {
     Inorder(root.Left, arr)
     *arr = append(*arr, root.Val)
     Inorder(root.Right, arr)
+}
+```
+
+---
+### 6️⃣ 对称二叉树
+<img width="500" height="600" alt="image" src="https://github.com/user-attachments/assets/5041a0fc-85ee-4638-a1c2-d6f6853e34f8" />
+
+
+```go
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func isSymmetric(root *TreeNode) bool {
+    if root == nil {
+        return true
+    }
+    return compare(root.Left, root.Right)
+}
+
+func compare(left, right *TreeNode) bool {
+    // 处理空节点：一空一非 false，两空 true
+    if left == nil || right == nil {
+        return left == right
+    }
+    // 值不相等：不对称
+    if left.Val != right.Val {
+        return false
+    }
+    // 镜像递归：外侧 (left.Left ↔ right.Right)，内侧 (left.Right ↔ right.Left)
+    return compare(left.Left, right.Right) && compare(left.Right, right.Left)
 }
 ```
 
