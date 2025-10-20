@@ -54,6 +54,7 @@
 | 2    | [验证二叉搜索树](#2️⃣-验证二叉搜索树)                      | 二叉树   | [98. 验证二叉搜索树 - 力扣（LeetCode）](https://leetcode.cn/problems/validate-binary-search-tree/submissions/671510624/)       | 🟢 Easy |
 | 3    | [二叉树的最近公共祖先](#3️⃣-二叉树的最近公共祖先)                      | 二叉树   | [236. 二叉树的最近公共祖先 - 力扣（LeetCode）](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/description/)       | 🟢 Easy |
 | 4    | [二叉树的最近公共祖先](#4️⃣-二叉搜索树的最近公共祖先)                      | 二叉树   | [235. 二叉搜索树的最近公共祖先 - 力扣（LeetCode）](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/)       | 🟢 Easy |
+| 5    | [二叉树的中序遍历](#5️⃣-二叉树的中序遍历)                      | 二叉树，递归   | [94. 二叉树的中序遍历 - 力扣（LeetCode）](https://leetcode.cn/problems/binary-tree-inorder-traversal/?envType=problem-list-v2&envId=tree)       | 🟢 Easy |
 ## 
 ## 🔢 哈希表与集合 (Map & Set)
 
@@ -774,6 +775,35 @@ func (this *StockSpanner) Next(price int) int {
  * obj := Constructor();
  * param_1 := obj.Next(price);
  */
+```
+
+---
+### 5️⃣ 二叉树的中序遍历
+
+
+```go
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func inorderTraversal(root *TreeNode) []int {
+    arr := make([]int, 0)
+    Inorder(root, &arr)
+    return arr
+}
+// 得传入切片指针
+func Inorder(root *TreeNode, arr *[]int) {
+    if root == nil {
+        return 
+    }
+    Inorder(root.Left, arr)
+    *arr = append(*arr, root.Val)
+    Inorder(root.Right, arr)
+}
 ```
 
 ---
