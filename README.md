@@ -70,7 +70,7 @@
 
 | #    | 题目                                                         | 类型     | LeetCode                                                     | 难度   |
 | ---- | ------------------------------------------------------------ | -------- | ------------------------------------------------------------ | ------ |
-| 1    | [Pow(x, n)](#1️⃣-Pow(x,-n))                      | 分治   | [50. Pow(x, n) - 力扣（LeetCode）](https://leetcode.cn/problems/powx-n/submissions/672428423/)      | 🟢 Easy |
+| 1    | [x的n次方](#1️⃣-x的n次方)                      | 分治   | [50. Pow(x, n) - 力扣（LeetCode）](https://leetcode.cn/problems/powx-n/submissions/672428423/)      | 🟢 Easy |
 
 
 ## 
@@ -862,7 +862,7 @@ func compare(left, right *TreeNode) bool {
 ```
 
 ---
-### 1️⃣ Pow(x, n)
+### 1️⃣ x的n次方
 ```go
 func myPow(x float64, n int) float64 {
     if n < 0 {
