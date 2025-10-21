@@ -56,6 +56,7 @@
 | 4    | [二叉树的最近公共祖先](#4️⃣-二叉搜索树的最近公共祖先)                      | 二叉树   | [235. 二叉搜索树的最近公共祖先 - 力扣（LeetCode）](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/)       | 🟢 Easy |
 | 5    | [二叉树的中序遍历](#5️⃣-二叉树的中序遍历)                      | 二叉树，递归   | [94. 二叉树的中序遍历 - 力扣（LeetCode）](https://leetcode.cn/problems/binary-tree-inorder-traversal/?envType=problem-list-v2&envId=tree)       | 🟢 Easy |
 | 6    | [对称二叉树](#6️⃣-对称二叉树)                      | 二叉树，递归   | [101. 对称二叉树 - 力扣（LeetCode）](https://leetcode.cn/problems/symmetric-tree/?envType=problem-list-v2&envId=tree)       | 🟢 Easy |
+| 7    | [二叉树的层序遍历](#6️⃣-二叉树的层序遍历)                      | 二叉树，队列   | [102. 二叉树的层序遍历 - 力扣（LeetCode）](https://leetcode.cn/problems/binary-tree-level-order-traversal/submissions/672503632/)       | 🟢 Easy |
 
 ## 
 ## 🔢 哈希表与集合 (Map & Set)
@@ -914,6 +915,45 @@ func maxProfit(prices []int) int {
             res += (prices[i] - yesterday)
         }
         yesterday = prices[i]
+    }
+    return res
+}
+```
+---
+### 6️⃣ 二叉树的层序遍历
+<img width="500" height="800" alt="image" src="https://github.com/user-attachments/assets/ebc6e82d-c367-45a2-9f2d-77f57469a756" />
+
+```go
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func levelOrder(root *TreeNode) [][]int {
+    if root == nil {
+        return [][]int{}
+    }
+    queue := []*TreeNode{root}  // 简化为字面量初始化
+    res := [][]int{}
+    for len(queue) > 0 {
+        levelSize := len(queue)  // 当前层节点数（有效节点）
+        levelVals := []int{}     // 当前层值
+        for i := 0; i < levelSize; i++ {
+            node := queue[0]
+            queue = queue[1:]
+            levelVals = append(levelVals, node.Val)  // 假设无 nil 节点（标准树）
+            // 只追加非 nil 子节点
+            if node.Left != nil {
+                queue = append(queue, node.Left)
+            }
+            if node.Right != nil {
+                queue = append(queue, node.Right)
+            }
+        }
+        res = append(res, levelVals)
     }
     return res
 }
