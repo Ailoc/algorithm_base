@@ -62,10 +62,11 @@
 
 | #    | 题目                                                         | 类型     | LeetCode                                                     | 难度   |
 | ---- | ------------------------------------------------------------ | -------- | ------------------------------------------------------------ | ------ |
-| 1    | [有效的字母异位词](#1️⃣-有效的字母异位词)                      | 二叉树   | [242. 有效的字母异位词 - 力扣（LeetCode）](https://leetcode.cn/problems/valid-anagram/description/)      | 🟢 Easy |
+| 1    | [有效的字母异位词](#1️⃣-有效的字母异位词)                      | 哈希表   | [242. 有效的字母异位词 - 力扣（LeetCode）](https://leetcode.cn/problems/valid-anagram/description/)      | 🟢 Easy |
+| 2    | [多数元素](#2️⃣-多数元素)                      | 哈希表   | [169. 多数元素 - 力扣（LeetCode）](https://leetcode.cn/problems/majority-element/)      | 🟢 Easy |
 
 ## 
-## 🔢 递归与分治 (Recursion & Divide&Conquer)
+## 🌠 递归与分治 (Recursion & Divide&Conquer)
 
 | #    | 题目                                                         | 类型     | LeetCode                                                     | 难度   |
 | ---- | ------------------------------------------------------------ | -------- | ------------------------------------------------------------ | ------ |
@@ -693,6 +694,7 @@ func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
 
 ---
 ### 1️⃣ 有效的字母异位词
+<img width="600" height="500" alt="image" src="https://github.com/user-attachments/assets/b63465fd-e47a-4eb5-b389-dd0b8734b1ca" />
 
 ```go
 func isAnagram(s string, t string) bool {
@@ -865,6 +867,27 @@ func myPow(x float64, n int) float64 {
     } else {
         return half * half * x
     }
+}
+```
+---
+### 2️⃣ 多数元素
+<img width="500" height="600" alt="image" src="https://github.com/user-attachments/assets/ffd47a55-91d9-4c9d-84e8-efb1de78caec" />
+
+```go
+func majorityElement(nums []int) int {
+    if len(nums) == 1 {return nums[0]}
+    res := make(map[int]int)
+    for _, value := range nums {
+        if v, ok := res[value]; ok {
+            res[value] = v + 1
+            if res[value] > (len(nums) / 2) {
+                return value
+            }
+        } else {
+            res[value] = 1
+        }
+    }
+    return 0
 }
 ```
 ---
