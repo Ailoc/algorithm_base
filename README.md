@@ -56,7 +56,8 @@
 | 4    | [二叉树的最近公共祖先](#4️⃣-二叉搜索树的最近公共祖先)                      | 二叉树   | [235. 二叉搜索树的最近公共祖先 - 力扣（LeetCode）](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/)       | 🟢 Easy |
 | 5    | [二叉树的中序遍历](#5️⃣-二叉树的中序遍历)                      | 二叉树，递归   | [94. 二叉树的中序遍历 - 力扣（LeetCode）](https://leetcode.cn/problems/binary-tree-inorder-traversal/?envType=problem-list-v2&envId=tree)       | 🟢 Easy |
 | 6    | [对称二叉树](#6️⃣-对称二叉树)                      | 二叉树，递归   | [101. 对称二叉树 - 力扣（LeetCode）](https://leetcode.cn/problems/symmetric-tree/?envType=problem-list-v2&envId=tree)       | 🟢 Easy |
-| 7    | [二叉树的层序遍历](#6️⃣-二叉树的层序遍历)                      | 二叉树，队列   | [102. 二叉树的层序遍历 - 力扣（LeetCode）](https://leetcode.cn/problems/binary-tree-level-order-traversal/submissions/672503632/)       | 🟢 Easy |
+| 7    | [二叉树的层序遍历](#7️⃣-二叉树的层序遍历)                      | 二叉树，队列   | [102. 二叉树的层序遍历 - 力扣（LeetCode）](https://leetcode.cn/problems/binary-tree-level-order-traversal/submissions/672503632/)       | 🟢 Easy |
+| 8    | [二叉树的最小深度](#8️⃣-二叉树的最小深度)                      | 二叉树，bfs,dfs   | [111. 二叉树的最小深度 - 力扣（LeetCode）](https://leetcode.cn/problems/minimum-depth-of-binary-tree/description/)       | 🟢 Easy |
 
 ## 
 ## 🔢 哈希表与集合 (Map & Set)
@@ -920,7 +921,7 @@ func maxProfit(prices []int) int {
 }
 ```
 ---
-### 6️⃣ 二叉树的层序遍历
+### 7️⃣ 二叉树的层序遍历
 <img width="500" height="800" alt="image" src="https://github.com/user-attachments/assets/ebc6e82d-c367-45a2-9f2d-77f57469a756" />
 
 ```go
@@ -956,6 +957,59 @@ func levelOrder(root *TreeNode) [][]int {
         res = append(res, levelVals)
     }
     return res
+}
+```
+---
+### 8️⃣ 二叉树的最小深度
+<img width="500" height="800" alt="image" src="https://github.com/user-attachments/assets/65e87b20-bc41-4755-8e4e-b2152940e6fe" />
+
+```go
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func minDepth(root *TreeNode) int {
+    // if root == nil {
+    //     return 0
+    // }
+    // // 一旦根节点有子节点，那么根节点就不可能是叶子节点
+    // if root.Left == nil {
+    //     return 1 + minDepth(root.Right)
+    // }
+    // if root.Right == nil {
+    //     return 1 + minDepth(root.Left)
+    // }
+    // left := 1 + minDepth(root.Left)
+    // right := 1 + minDepth(root.Right)
+    // if left < right {
+    //     return left
+    // }
+    // return right
+    return bfs(root)
+}
+func bfs(root *TreeNode) int {
+    if root == nil {return 0}
+    nodeQueue := []*TreeNode{root}
+    deep := 0
+    for len(nodeQueue) > 0 {
+        levelSize := len(nodeQueue)
+        for i := 0; i < levelSize; i++ {
+            if nodeQueue[i].Left == nil && nodeQueue[i].Right == nil {return deep+1}
+            if nodeQueue[i].Left != nil {
+                nodeQueue = append(nodeQueue, nodeQueue[i].Left)
+            }
+            if nodeQueue[i].Right != nil {
+                nodeQueue = append(nodeQueue, nodeQueue[i].Right)
+            }
+        }
+        nodeQueue = nodeQueue[levelSize:]
+        deep += 1
+    }
+    return deep
 }
 ```
 ---
