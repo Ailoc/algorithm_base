@@ -58,6 +58,7 @@
 | 6    | [对称二叉树](#6️⃣-对称二叉树)                      | 二叉树，递归   | [101. 对称二叉树 - 力扣（LeetCode）](https://leetcode.cn/problems/symmetric-tree/?envType=problem-list-v2&envId=tree)       | 🟢 Easy |
 | 7    | [二叉树的层序遍历](#7️⃣-二叉树的层序遍历)                      | 二叉树，队列   | [102. 二叉树的层序遍历 - 力扣（LeetCode）](https://leetcode.cn/problems/binary-tree-level-order-traversal/submissions/672503632/)       | 🟢 Easy |
 | 8    | [二叉树的最小深度](#8️⃣-二叉树的最小深度)                      | 二叉树，bfs,dfs   | [111. 二叉树的最小深度 - 力扣（LeetCode）](https://leetcode.cn/problems/minimum-depth-of-binary-tree/description/)       | 🟢 Easy |
+| 9    | [二叉树的最大深度](#9️⃣-二叉树的最大深度)                      | 二叉树，bfs,dfs   | [104. 二叉树的最大深度 - 力扣（LeetCode）](https://leetcode.cn/problems/maximum-depth-of-binary-tree/description/)       | 🟢 Easy |
 
 ## 
 ## 🔢 哈希表与集合 (Map & Set)
@@ -1008,6 +1009,50 @@ func bfs(root *TreeNode) int {
         }
         nodeQueue = nodeQueue[levelSize:]
         deep += 1
+    }
+    return deep
+}
+```
+---
+
+### 9️⃣ 二叉树的最大深度
+<img width="500" height="800" alt="image" src="https://github.com/user-attachments/assets/b66b9d34-e105-4132-a255-c76a37ef4867" />
+
+```go
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func maxDepth(root *TreeNode) int {
+    // if root == nil {return 0}
+    // left := maxDepth(root.Left) + 1
+    // right := maxDepth(root.Right) + 1
+    // if left > right {
+    //     return left
+    // }
+    // return right
+    return bfs(root)
+}
+func bfs(root *TreeNode) int {
+    if root == nil {return 0}
+    queue := []*TreeNode{root}
+    deep := 0
+    for len(queue) > 0 {
+        levelSize := len(queue)
+        for i := 0; i < levelSize; i++ {
+            if queue[i].Left != nil {
+                queue = append(queue, queue[i].Left)
+            }
+            if queue[i].Right != nil {
+                queue = append(queue, queue[i].Right)
+            }
+        }
+        deep += 1
+        queue = queue[levelSize:]
     }
     return deep
 }
