@@ -74,6 +74,7 @@
 | #    | 题目                                                         | 类型     | LeetCode                                                     | 难度   |
 | ---- | ------------------------------------------------------------ | -------- | ------------------------------------------------------------ | ------ |
 | 1    | [x的n次方](#1️⃣-x的n次方)                      | 分治   | [50. Pow(x, n) - 力扣（LeetCode）](https://leetcode.cn/problems/powx-n/submissions/672428423/)      | 🟢 Easy |
+| 2    | [括号生成](#2️⃣-括号生成)                      | 分治   | [22. 括号生成 - 力扣（LeetCode）](https://leetcode.cn/problems/generate-parentheses/)      | 🟢 Easy |
 
 
 ## 
@@ -1081,6 +1082,33 @@ func bitwiseComplement(n int) int {
         tmp = tmp >> 1   //用于判断整个数是否已经处理结束，结束时tmp为0
     }
     return n
+}
+```
+---
+
+### 2️⃣ 括号生成
+<img width="600" height="500" alt="image" src="https://github.com/user-attachments/assets/3afce9da-a8e4-4953-8956-eff36975510d" />
+
+```go
+func generateParenthesis(n int) []string {
+    res := make([]string, 0)
+    gen("", &res, n, n)
+    return res
+}
+//按照括号匹配规范生成括号串
+func gen(s string, res *[]string, left, right int) {
+    if left == 0 && right == 0 {
+        *res = append(*res, s)
+        return 
+    }
+    // 左括号只要有就可以加进去
+    if left > 0 {
+        gen(s+"(", res, left-1, right)
+    }
+    // 右括号必须在左括号数大于右括号数时才可以添加
+    if right > left {
+        gen(s+")", res, left, right-1)
+    }
 }
 ```
 ---
